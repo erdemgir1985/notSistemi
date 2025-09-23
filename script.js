@@ -27,3 +27,15 @@ console.log('Ortalama Not: ' + calculateGrade(students[0]));
 
 // Note : reduce methodu dizideki elemanları tek bir değere  dusurmek  için kullanılır.
 // Ornegin bir dizide birden cok sayi var ve toplama cikarma yapilicka ise reduce methodu kullanılır.
+
+function passedStudent(student) {
+  return calculateGrade(student) >= 50;
+}
+
+let passed = students.filter(passedStudent);
+let failed = students.filter(s => !passedStudent(s));
+
+passed.map(s => s.name).forEach(name => console.log(name + " geçti"));
+failed.map(s => s.name).forEach(name => console.log(name + " kaldı"));
+
+
