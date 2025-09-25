@@ -13,14 +13,29 @@ let vehicles = [
 
 
 // fonsiyondan promtdan yeni araba ekleyeceginz  plakasini ve  markasini girerek ve park durumu otomatik ekleme yaparken true olucak yeni ekleniyorsa
-newPlate = prompt("Lütfen plakayı yazın");
-newBrand = prompt("Lütfen markayı yazın");
-addVehicle(vehicles, { plate: newPlate, brand: newBrand, inPark:true});
+// newPlate = prompt("Lütfen plakayı yazın");
+// newBrand = prompt("Lütfen markayı yazın");
+// addVehicle(vehicles, { plate: newPlate, brand: newBrand, inPark:true});
 
-function addVehicle(vehicles, newVehicle){
-vehicles.push(newVehicle) 
-console.log(`${newVehicle.plate} eklendi.`);
+// function addVehicle(vehicles, newVehicle){
+// vehicles.push(newVehicle) 
+// console.log(`${newVehicle.plate} eklendi.`);
+// }
+
+function addVehicle(vehicles, plate, brand) {
+  vehicles.push({
+    plate,
+    brand,
+    inPark: true, 
+  });
+  console.log(`${plate} eklendi.`);
 }
+
+let newPlate = prompt("Lütfen plakayi yazin");
+let newBrand = prompt("Lütfen markayi yazin");
+
+addVehicle(vehicles, newPlate, newBrand);
+console.log(vehicles);
 
 // fonsiyonda promtdan plaka girilicek ve eger park durumundaysa true ise false donucek , false ise zaten  arac bulunmuyor gibi yazi cikicak
 
