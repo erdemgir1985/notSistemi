@@ -13,27 +13,56 @@ let attendees = [
 ];
 
 
-function addAttendee(attendees)  // yeni katılımcı ekleme islemi yapilir (push methodu)
-{
-
-}
-function removeAttendee(attendees)  // promtdan girilen kullanicinin ismine ve tickert turune gore silme islemi yapilir (filter)
-{
-
+// yeni katılımcı ekleme islemi yapilir (push methodu)
+function addAttendee(attendees, newAttendee) {
+  attendees.push(newAttendee);
+  console.log(`${newAttendee.name} eklendi.`);
 }
 
-function checkInAttendee(attendees)  // check-in yapma islemi yapilir (find methodu) false ise true yapar true ise zaten check-in yapildi der
-{
+// addAttendee(attendees, { name: 'Ali', age: 27, ticketType: 'VIP', checkedIn: false });
 
+ // promtdan girilen kullanicinin ismine ve tickert turune gore silme islemi yapilir (filter)
+function removeAttendee(attendees, name, ticketType) {
+  let filtered = attendees.filter(
+    att => !(att.name === name && att.ticketType === ticketType)
+  );
+  console.log(`${name} (${ticketType}) listeden silindi.`);
+  return filtered;
 }
 
-function listByTicketType(attendees) // bilet türüne göre listeleme islemi yapilir (filter methodu)
-{
+// attendees = removeAttendee(attendees, 'Mike', 'VIP');
 
+  // check-in yapma islemi yapilir (find methodu) false ise true yapar true ise zaten check-in yapildi der
+function checkInAttendee(attendees, name) {
+  let person = attendees.find(att => att.name === name);
+  if (person) {
+    if (!person.checkedIn) {
+      person.checkedIn = true;
+      console.log(`${name} check-in yaptı.`);
+    } else {
+      console.log(`${name} zaten check-in yapmış.`);
+    }
+  } else {
+    console.log(`${name} bulunamadı.`);
+  }
 }
 
-function countCheckedIn(attendees)  // giriş yapan katılımcıları sayma islemi yapilir (reduce methodu)
-{
+// checkInAttendee(attendees, 'John');
 
+// bilet türüne göre listeleme islemi yapilir (filter methodu)
+function listByTicketType(attendees, ticketType) {
+  let list = attendees.filter(att => att.ticketType === ticketType);
+  console.log(`${ticketType} bilet sahipleri:`);
+  list.forEach(att => console.log(`- ${att.name}`));
 }
 
+// listByTicketType(attendees, 'VIP');
+
+// giriş yapan katılımcıları sayma islemi yapilir (reduce methodu)
+function countCheckedIn(attendees) {
+  let count = attendees.reduce((acc, att) => acc + (att.checkedIn ? 1 : 0), 0);
+  console.log(`Check-in yapan kişi sayısı: ${count}`);
+  return count;
+}
+
+// countCheckedIn(attendees);
