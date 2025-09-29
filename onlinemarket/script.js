@@ -21,7 +21,7 @@ function addProduct(name, price, adet) {
 
 // Sepetteki ürünleri listele
 function listProducts(arr) {
-  console.log("🛒 Sepetteki ürünler:")
+  console.log("Sepetteki ürünler:")
   arr.forEach(p => {
     console.log(`- ${p.name} | Fiyat: ${p.price} | Adet: ${p.adet}`)
   })
@@ -51,4 +51,4 @@ let totalPrice = calculateTotal(total => `Toplam fiyat: ${total} TL`)
 console.log(totalPrice)
 
 let totalCount = countProductsRecursive(product)
-console.log(`📦 Toplam ürün sayısı: ${totalCount}`)
+console.log(`Toplam ürün sayısı: ${totalCount}`)
