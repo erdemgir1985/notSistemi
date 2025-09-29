@@ -40,6 +40,23 @@ console.log(vehicles);
 // fonsiyonda promtdan plaka girilicek ve eger park durumundaysa true ise false donucek , false ise zaten  arac bulunmuyor gibi yazi cikicak
 
 // function toggleVehicleStatus(vehicles)
+toggleVehicleStatus(vehicles);
+function toggleVehicleStatus(vehicles) {
+  let myPlate = prompt("Lütfen plakanızı yazın");
+  
+  let myVehicle = vehicles.find(v => v.plate === myPlate);
+
+  if (myVehicle) {
+    if (myVehicle.inPark) {
+      myVehicle.inPark = true;
+      console.log(`${myPlate} plakalı araç parkta.`);
+    } else {
+      console.log(`${myPlate} plakalı araç parkta değil.`);
+    }
+  } else {
+    console.log(`${myPlate} plakalı araç bulunamadı.`);
+  }
+}
 
 // fonsiyonda  inPark durumu true olanlari filtreleyecegiz
 // fonsiyonda forEach kullanicaz filtrelediklerimizi dondururken
