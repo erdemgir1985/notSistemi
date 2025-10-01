@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+<body class="min-h-screen bg-gray-900 text-gray-100">
+    <main class="max-w-3xl mx-auto px-4 py-10">
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-sm">
+            <h1 class="text-xl font-semibold mb-2">Bilet Sistem</h1>
+            <p class="text-sm text-gray-300">Script, katılımcı ekleme/silme, check-in ve bilet türüne göre listeleme yapar.</p>
+        </div>
+        <div class="mt-6">
+            <button id="toggleCode" class="px-3 py-1.5 text-sm border border-gray-600 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-100">Kodu Göster</button>
+            <div id="codeBox" class="mt-3 hidden"></div>
+        </div>
+    </main>
 </body>
+<script>
+(function(){
+  var loaded = false;
+  var btn = document.getElementById('toggleCode');
+  var box = document.getElementById('codeBox');
+  if(!btn || !box) return;
+  btn.addEventListener('click', function(){
+    if(!loaded){
+      var iframe = document.createElement('iframe');
+      iframe.src = 'script.js';
+      iframe.loading = 'lazy';
+      iframe.className = 'w-full h-80 border border-gray-700 rounded-lg bg-gray-900';
+      box.appendChild(iframe);
+      loaded = true;
+      box.classList.remove('hidden');
+      btn.textContent = 'Kodu Gizle';
+    } else {
+      var hidden = box.classList.toggle('hidden');
+      btn.textContent = hidden ? 'Kodu Göster' : 'Kodu Gizle';
+    }
+  });
+})();
+</script>
 <script src="script.js"></script>
 </html>

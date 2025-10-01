@@ -1,55 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeler</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
 </head>
 <body>
-    <main class="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-800">
+    <main class="min-h-screen bg-base-200 text-base-content">
         <div class="max-w-5xl mx-auto px-4 py-12">
-            <h1 class="text-2xl font-semibold mb-8">Projeler</h1>
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="text-2xl font-semibold">Projeler</h1>
+                <label class="flex items-center gap-2">
+                    <span class="text-sm opacity-70">Tema</span>
+                    <select id="themeSelect" class="select select-bordered select-sm theme-controller">
+                        <option value="light">light</option>
+                        <option value="dark">dark</option>
+                        <option value="cupcake">cupcake</option>
+                        <option value="bumblebee">bumblebee</option>
+                        <option value="emerald">emerald</option>
+                    </select>
+                </label>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-                <a href="./ogrenciTakip/index.html" class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+                <a href="./ogrenciTakip/index.html" class="group block rounded-xl border border-base-200 bg-base-100 p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-base-300 transition-all duration-200 hover:-translate-y-0.5">
                     <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 rounded-full bg-gray-100 grid place-items-center text-gray-600">🎓</div>
-                        <div class="font-medium">Öğrenci Takip</div>
+                        <div class="h-10 w-10 rounded-full bg-base-200 grid place-items-center">🎓</div>
+                        <div>
+                            <div class="font-medium">Öğrenci Takip</div>
+                            <div class="text-sm opacity-70 mt-1">Not ortalaması ve geçiş durumu</div>
+                        </div>
                     </div>
                 </a>
-                <a href="./biletsistem/index.html" class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+                <a href="./biletsistem/index.html" class="group block rounded-xl border border-base-200 bg-base-100 p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-base-300 transition-all duration-200 hover:-translate-y-0.5">
                     <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 rounded-full bg-gray-100 grid place-items-center text-gray-600">🎟️</div>
-                        <div class="font-medium">Bilet Sistem</div>
+                        <div class="h-10 w-10 rounded-full bg-base-200 grid place-items-center">🎟️</div>
+                        <div>
+                            <div class="font-medium">Bilet Sistem</div>
+                            <div class="text-sm opacity-70 mt-1">Katılımcı, check-in ve listeleme</div>
+                        </div>
                     </div>
                 </a>
-                <a href="./arabaPark/index.html" class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+                <a href="./arabaPark/index.html" class="group block rounded-xl border border-base-200 bg-base-100 p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-base-300 transition-all duration-200 hover:-translate-y-0.5">
                     <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 rounded-full bg-gray-100 grid place-items-center text-gray-600">🚗</div>
-                        <div class="font-medium">Araç Park</div>
+                        <div class="h-10 w-10 rounded-full bg-base-200 grid place-items-center">🚗</div>
+                        <div>
+                            <div class="font-medium">Araç Park</div>
+                            <div class="text-sm opacity-70 mt-1">Araç ekleme ve park durumu</div>
+                        </div>
                     </div>
                 </a>
-                <a href="./kitapbilgi/index.html" class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+                <a href="./kitapbilgi/index.html" class="group block rounded-xl border border-base-200 bg-base-100 p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-base-300 transition-all duration-200 hover:-translate-y-0.5">
                     <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 rounded-full bg-gray-100 grid place-items-center text-gray-600">📚</div>
-                        <div class="font-medium">Kitap Bilgi</div>
+                        <div class="h-10 w-10 rounded-full bg-base-200 grid place-items-center">📚</div>
+                        <div>
+                            <div class="font-medium">Kitap Bilgi</div>
+                            <div class="text-sm opacity-70 mt-1">Bilgi gösterme, yıl ve tür işlemleri</div>
+                        </div>
                     </div>
                 </a>
-                <a href="./onlinemarket/index.html" class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+                <a href="./onlinemarket/index.html" class="group block rounded-xl border border-base-200 bg-base-100 p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-base-300 transition-all duration-200 hover:-translate-y-0.5">
                     <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 rounded-full bg-gray-100 grid place-items-center text-gray-600">🛒</div>
-                        <div class="font-medium">Online Market</div>
+                        <div class="h-10 w-10 rounded-full bg-base-200 grid place-items-center">🛒</div>
+                        <div>
+                            <div class="font-medium">Online Market</div>
+                            <div class="text-sm opacity-70 mt-1">Sepet, toplam (callback), recursive sayım</div>
+                        </div>
                     </div>
                 </a>
-                <a href="./sporSalonu/index.html" class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-gray-200 transition-all duration-200 hover:-translate-y-0.5">
+                <a href="./sporSalonu/index.html" class="group block rounded-xl border border-base-200 bg-base-100 p-5 shadow-md hover:shadow-lg ring-1 ring-transparent hover:ring-base-300 transition-all duration-200 hover:-translate-y-0.5">
                     <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 rounded-full bg-gray-100 grid place-items-center text-gray-600">🏋️‍♀️</div>
-                        <div class="font-medium">Spor Salonu</div>
+                        <div class="h-10 w-10 rounded-full bg-base-200 grid place-items-center">🏋️‍♀️</div>
+                        <div>
+                            <div class="font-medium">Spor Salonu</div>
+                            <div class="text-sm opacity-70 mt-1">Üyelik bilgisi ve durum değişimi</div>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
     </main>
+    <script>
+    // Tema yükle ve select’i senkronize et
+    (function(){
+      var saved = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved);
+      var sel = document.getElementById('themeSelect');
+      if (sel) sel.value = saved;
+    })();
+
+    // Değişiklikleri kaydet ve uygula
+    (function(){
+      var sel = document.getElementById('themeSelect');
+      if (!sel) return;
+      sel.addEventListener('change', function(){
+        var val = sel.value;
+        localStorage.setItem('theme', val);
+        document.documentElement.setAttribute('data-theme', val);
+      });
+    })();
+    </script>
 </body>
 <script src="script.js"></script>
 </html>
